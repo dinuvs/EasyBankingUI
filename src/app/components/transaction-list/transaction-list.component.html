@@ -1,0 +1,37 @@
+
+<br>
+<br>
+<div>
+  <label><h5>Account Balance:</h5></label>
+  <label> <h5>{{ latestTransaction.accountBalance }}</h5></label>
+</div>
+
+<div></div>
+  <div class="md-col-12">
+    <h4>Transaction List</h4>
+    <br>
+    <Table width=600 class="table-primary table-striped table-hover md-col-12">
+      <thead>
+        <tr>
+          <th>Transaction Amount</th>
+          <th>Account Balance</th>
+          <th>Transacted By</th>
+          <th>Transacted Date</th>
+          <th>Transaction Type</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let transaction of transactions">
+        <tr>
+          <td>{{ transaction.transactionAmount }}</td>
+          <td>{{ transaction.accountBalance }}</td>
+          <td>{{ transaction.transactedBy }}</td>
+          <td>{{ transaction.lastUpdated }}</td>
+          <td *ngIf=" transaction.transactionTypeId ==1">Credit</td>
+          <td *ngIf=" transaction.transactionTypeId ==2">Debit</td>
+        </tr>
+      </tbody >
+    </Table>
+
+  </div>
+  
+
